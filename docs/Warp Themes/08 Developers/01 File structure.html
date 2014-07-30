@@ -1,0 +1,155 @@
+<h1 class="title">File structure</h1>
+
+<p class="article-lead">Get an overview of how all source files of Warp 7 based themes are organized.</p>
+
+<table class="zebra">
+  <thead>
+    <tr>
+      <td>Folder/File</td>
+      <td>Description</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>/css</code></td>
+      <td>Contains all CSS files of the theme.</td>
+    </tr>
+    <tr>
+      <td><code>/css/custom.css</code></td>
+      <td>Use this file to easily add custom CSS. Though the recommended approach is to create a {doc: customization text: new style} in order to make changes update proof.</td>
+    </tr>
+    <tr>
+      <td><code>/css/ie8.css</code></td>
+      <td>Fixes basic issues for Microsoft Internet Explorer 8.</td>
+    </tr>
+    <tr>
+      <td><code>/css/theme.css</code></td>
+      <td>Contains the theme's default CSS. This file is compiled from the <code>less/theme.less</code> file.</td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+      <td><code>/images</code></td>
+      <td>Contains all image files of the theme.</td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+      <td><code>/js</code></td>
+      <td>Contains all JavaScript files of the theme.</td>
+    </tr>
+    <tr>
+      <td><code>/js/theme.js</code></td>
+      <td>Responsible for all JavaScript effects and all JavaScript based functions.</td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+      <td><code>/layouts</code></td>
+      <td>Contains the core files responsible for the theme's layout.</td>
+    </tr>
+    <tr>
+      <td><code>/layouts/theme.php</code></td>
+      <td>Provides the complete HTML markup for the base theme layout. For more information, take a look at {doc: theme-layout text: Theme layout}.</td>
+    </tr>
+    <tr>
+      <td><code>/layouts/theme.config.php</code></td>
+      <td>Includes layout calculations and assembles the theme's CSS and JS files.</td>
+    </tr>
+    <tr>
+      <td><code>/layouts/widget.php</code></td>
+      <td>Responsible for displaying all widget variations. For more information take a look at {doc: widgets-2 text: Widgets/Modules}.</td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+      <td><code>/less</code></td>
+      <td>All LESS files of your theme are stored in this folder.</td>
+    </tr>
+    <tr>
+      <td><code>/less/uikit</code></td>
+      <td>Contains all UIkit theme LESS files, the frontend framework on which Warp is built.</td>
+    </tr>
+    <tr>
+      <td><code>/less/bootstrap</code></td>
+      <td>Contains all Bootstrap related LESS files (Joomla 3 only).</td>
+    </tr>
+    <tr>
+      <td><code>/less/theme.less</code></td>
+      <td>Defines the theme style and imports the UIkit theme. This file will be compiled into CSS and saved in the <code>/css</code> folder everytime you hit <em>Compile LESS</em> in the theme settings. At the same time, all styles will be saved in the <code>/styles/STYLE-NAME/css</code> folder.</td>
+    </tr>
+    <tr>
+      <td><code>/less/customizer.json</code></td>
+      <td>Defines which customizer parameters will be displayed in default or advanced mode. It groups UIkit variables, sets what can be defined through the color picker, direct input or a select box and adds fonts.</td>
+    </tr>
+    <tr>
+      <td><code>/less/bootstrap.less</code></td>
+      <td>Imports all Bootstrap related files (Joomla 3 only). Just like the <code>/less/theme.less</code> file it will be compiled into CSS, everytime you hit <em>Compile LESS</em> in the theme settings.</td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+      <td><code>/styles</code></td>
+      <td>Here you can find the available style variations and add your own {doc: customization text: custom style}.</td>
+    </tr>
+    <tr>
+      <td><code>/styles/STYLE-NAME/style.less</code></td>
+      <td>Custom set of LESS variables generated through the customizer. Everytime you hit <em>Compile LESS</em> in the theme settings these variables will be used to compile the CSS file in <code>/styles/STYLE-NAME/css</code>. If this file is not present no CSS file will be compiled which is great if you want to use completely your own custom CSS.</td>
+    </tr>
+    <tr>
+      <td><code>/styles/STYLE-NAME/css</code></td>
+      <td>Contains all compiled CSS files of your style, i.e. a <code>theme.css</code> file and for Joomla 3 only an additional <code>bootstrap.css</code> file. All these files are generated and compiled through the customizer.</td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+      <td><code>/warp</code></td>
+      <td>This folder contains the actual Warp 7 core framework.</td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+      <td><code>/CHANGELOG.md</code></td>
+      <td>Gives you information on the version number of your Warp theme and all changes that have so far been made.</td>
+    </tr>
+    <tr>
+      <td><code>/config.xml</code></td>
+      <td>Defines the theme settings. For more information, take a look at {doc: config text: Config.xml}.</td>
+    </tr>
+    <tr>
+      <td><code>/config.json</code></td>
+      <td>Stores the saved theme settings. This file will be generated automatically as soon as you save your settings.</td>
+    </tr>
+    <tr>
+      <td><code>/config.default.json</code></td>
+      <td>A backup of the default theme settings.</td>
+    </tr>
+    <tr>
+      <td><code>/config.php</code></td>
+      <td>Registers all LESS files which should be compiled to CSS.</td>
+    </tr>
+    <tr>
+      <td><code>/templateDetails.xml</code><br /><code>theme.xml</code></td>
+      <td>This file contains general information on your theme, like the name, release date, directories and module settings. In Joomla it's <code>templateDetails.xml</code> and in WordPress it's <code>theme.xml</code>.</td>
+    </tr>
+    <tr>
+      <td><code>/warp.php</code></td>
+      <td>This file loads the Warp Framework.</td>
+    </tr>
+    <tr>
+      <td><code>/favicon.ico</code></td>
+      <td>Will be displayed in your browser bar. To change the favicon, simply replace this file.</td>
+    </tr>
+    <tr>
+      <td><code>/apple_touch_icon.png</code></td>
+      <td>Will be displayed, if you bookmark your website on mobile devices. To change the icon, simply replace this file.</td>
+    </tr>
+  </tbody>
+</table>

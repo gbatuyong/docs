@@ -1,0 +1,125 @@
+<h1 class="title">Config.xml</h1>
+
+<p class="article-lead">The config.xml defines the Warp7 theme settings.</p>
+
+<p>In the theme settings, you can control basic preferences for the theme layouts, widgets and menus. Each menu tab has its own option panel and is defined in the <code>config.xml</code>.</p>
+
+<h2>&lt;fields&gt; elements</h2>
+
+<p><code>&lt;fields&gt;</code> elements define the menu tabs and create panels for their options.</p>
+
+<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;config&gt;
+    &lt;fields name="Settings" icon="uk-icon-cogs"&gt;
+        ...
+    &lt;/fields&gt;
+    &lt;fields name="Layouts" icon="uk-icon-columns"&gt;
+        ...
+    &lt;/fields&gt;
+    &lt;fields name="Modules" icon="uk-icon-th"&gt;
+        ...
+    &lt;/fields&gt;
+    &lt;fields name="Menus" icon="uk-icon-reorder"&gt;
+        ...
+    &lt;/fields&gt;
+    &lt;fields name="Information" icon="uk-icon-info-sign"&gt;
+        ...
+    &lt;/fields&gt;
+&lt;/config&gt;</code></pre>
+
+<h3>Add a new menu item</h3>
+
+<p>A <code>&lt;fields&gt;</code> element will add a new tab to the theme settings. The value of the <code>name</code> attribute will render the tab name.</p>
+
+<pre><code>&lt;fields name="MY-MENUITEM" icon="uk-icon-info-sign"&gt;
+    ...
+&lt;/fields&gt;</code></pre>
+
+<h2>&lt;field&gt; elements</h2>
+
+<p><code>&lt;field&gt;</code> elements inside <code>&lt;fields&gt;</code> elements define the options for the menu tabs.</p>
+
+<h3>Basic XML types</h3>
+
+<p>You can use basic XML types to create new options for your theme settings. This could be for example a radio button, a checkbox or an input field.</p>
+
+<table class="zebra">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>section</code></td>
+      <td>Defines the section for a description text.</td>
+    </tr>
+    <tr>
+      <td><code>radio</code></td>
+      <td>Defines a radio button.</td>
+    </tr>
+    <tr>
+      <td><code>checkbox</code></td>
+      <td>Defines a checkbox.</td>
+    </tr>
+    <tr>
+      <td><code>select</code></td>
+      <td>Defines a dropdown list.</td>
+    </tr>
+    <tr>
+      <td><code>text</code></td>
+      <td>Defines a input text.</td>
+    </tr>
+    <tr>
+      <td><code>textarea</code></td>
+      <td>Defines a multiline text input.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h4>Special XML types</h4>
+
+<p>There are also some Warp7 specific types available: <code>layouts</code>, <code>verify</code>, <code>styles</code>, <code>compile</code> and <code>info</code>.</p>
+
+<h3>Markup example</h3>
+
+<pre><code>&lt;!-- Section field --&gt;
+&lt;field type="section" name="Headline" description="A description text." /&gt;
+
+&lt;!-- Checkbox field --&gt;
+&lt;field type="checkbox" name="my-option-1" value="1" label="A description text." /&gt;
+
+&lt;!-- Radio field --&gt;
+&lt;field type="radio" name="my-option-2" value="1" label="A description text." /&gt;
+
+&lt;!-- Select field --&gt;
+&lt;field type="select" name="my-option-3" default="0"&gt;
+    &lt;option value="0"&gt;Option A&lt;/option&gt;
+    &lt;option value="1"&gt;Option B&lt;/option&gt;
+    &lt;option value="2"&gt;Option C&lt;/option&gt;
+    &lt;option value="3"&gt;Option D&lt;/option&gt;
+&lt;/field&gt;
+
+&lt;!-- Text field --&gt;
+&lt;field type="text" name="my-option-4" /&gt;
+
+&lt;!-- Textarea field --&gt;
+&lt;field type="textarea" name="my-option-5" class="uk-form-width-large" rows="8" /&gt;</code></pre>
+
+<h3>Add new options</h3>
+
+<p>To create a new option, add a <code>&lt;field&gt;</code> element to the setting, i.e. inside the <code>&lt;fields&gt;</code> element, to which you want to add your option. You can also copy an existing one and modify it to your needs.</p>
+
+<h2>config.json</h2>
+
+<p>The <code>config.xml</code> defines which theme settings are available. If someone saves the theme settings, they are saved in the minified <code>config.json</code> file. With every new saving process, the file will be overridden.</p>
+
+<p>Warp themes provide a separate <code>config.default.json</code> file, where the default theme settings are stored. This gives you the opportunity to restore your backend to the default settings and backup your own <code>config.json</code> file, making your settings update proof.</p>
+
+<p><span class="badge">NOTE</span> For a better overview, use the <a href="http://jsonformatter.curiousconcept.com/">JSON Formatter</a> - this will bring your minified file into easily readable markup.</p>
+
+<h2>Config object</h2>
+
+<p>Variables from the <code>config.xml</code> are stored in the config object. To access a variable's value, simply use the get method. Learn more about it in the {doc: theme-layout text: theme layout} chapter.</p>
